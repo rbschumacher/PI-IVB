@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "9d3324ee-483e-4f32-abb4-081cec3091ff",
+		"name": "ucpel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get clients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github.v3+json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token ca7aa42c51cca939e3eeedda5730f9bc8307df9b",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clients/list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clients",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rafael Brasil\",\n    \"address\": {\n      \"street\": \"Rua Pelotas\",\n      \"number\": 785,\n      \"city\": \"Pelotas\",\n      \"cep\": 96055530,\n      \"state\": \"RS\",\n      \"country\": \"BR\"\n    },\n    \"birthdate\": \"17/01/2000\",\n    \"phone_number\": 53985963827\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clients/add",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clients",
+						"add"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update client",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Teste patch\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clients/update/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clients",
+						"update",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4f019021-61e8-43eb-b922-e9d28d9ac21b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clients/delete/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clients",
+						"delete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "b76e7004-3808-415b-9edf-7da17daa8fae"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
